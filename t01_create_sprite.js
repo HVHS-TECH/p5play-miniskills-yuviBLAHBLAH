@@ -3,20 +3,32 @@
 // Create a sprite
 /// Written by ???
 /*******************************************************/
-	
+
 /*******************************************************/
 // setup()
 /*******************************************************/
 function setup() {
 	console.log("setup: ");
+	cnv = new Canvas(1000, 1000);
+	rectangle = new Sprite(200, 200, 67, 67, 'd');
+	rectangle.color = 'red';
 
+	circle = new Sprite(400, 400, 500, 'd');
+
+	circle.color = 'green';
 }
-	
+
 /*******************************************************/
 // draw()
+background('red');
 /*******************************************************/
 function draw() {
-	
+	rectangle = new Sprite(200, 200, 67, 67, 'd');
+	rectangle.color = 'red';
+
+	circle = new Sprite(400, 400, 500, 'd');
+
+	circle.color = 'green';
 }
 
 /*******************************************************/
