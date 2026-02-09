@@ -18,10 +18,13 @@ function setup() {
 	
 /*******************************************************/
 // draw()
-background('red');
 /*******************************************************/
 function draw() {
-	
+	background('red');
+	rectangle = new Sprite(200, 200, 67, 67, 'd');
+	rectangle.color = 'red';
+	rectangle.rotationSpeed = 2;
+	rectangle.vel.x = 2;
 }
 
 /*******************************************************/
