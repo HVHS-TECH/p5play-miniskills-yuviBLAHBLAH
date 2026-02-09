@@ -12,19 +12,16 @@ function setup() {
 	cnv = new Canvas(1000, 1000);
 	rectangle = new Sprite(200, 200, 67, 67, 'd');
 	rectangle.color = 'red';
-	rectangle.rotationSpeed = 2;
+	rectangle.rotationSpeed = -5;
 	rectangle.vel.x = 2;
+	rectangle.vel.y = 2;
 }
 	
 /*******************************************************/
 // draw()
 /*******************************************************/
 function draw() {
-	background('red');
-	rectangle = new Sprite(200, 200, 67, 67, 'd');
-	rectangle.color = 'red';
-	rectangle.rotationSpeed = 2;
-	rectangle.vel.x = 2;
+	background("white");
 }
 
 /*******************************************************/
