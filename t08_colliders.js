@@ -7,17 +7,25 @@
 /*******************************************************/
 // setup()
 /*******************************************************/
+function deleteBall() {
+	console.log("colliding: ");
+
+}
 function setup() {
-		console.log("setup: ");
-	cnv = new Canvas(1000, 1000);
+
+		//create a new group for the aliens and define the properties of the aliens
+
+	alienGroup = new Group();
+	console.log("setup: ");
+	cnv = new Canvas(windowWidth, windowHeight);
 	world.gravity.y = 10;
 	blecktangle = new Sprite(700, 200, 100, 100, 'd');
 	blecktangle.color = 'blue';
 	blecktangle.rotationSpeed = 5;
 	blecktangle.vel.x = -5;
 	blecktangle.friction = 2;
-	blecktangle.drag = 10;
-	blecktangle.bounciness = 100;
+	blecktangle.drag = 1;
+	blecktangle.bounciness = 10;
 	wallLH = new Sprite(0, height / 2, 8, height, 'k');
 	wallLH.color = 'black';
 
@@ -26,20 +34,12 @@ function setup() {
 	wallTop = new Sprite(width / 2, 0, width, 8, 'k');
 
 	wallBot = new Sprite(width / 2, height, width, 8, 'k');
-	ball_dot5 = new Sprite(width / 2, height / 2, 25, 'd');
-	ball_1 = new Sprite(width / 2, height / 2, 50, 'd');
-	ball_1dot5 = new Sprite(width / 2, height / 2, 75, 'd');
-	ball_2 = new Sprite(width / 2, height / 2, 100, 'd');
-	ball_3 = new Sprite(width / 2, height / 2, 150, 'd');
-	ball_4 = new Sprite(width / 2, height / 2, 200, 'd');
-	ball_5 = new Sprite(width / 2, height / 2, 250, 'd');
-	ball_6 = new Sprite(width / 2, height / 2, 300, 'd');
 
-	alienGroup = new Group();
+	//defines the properties of new aliens and creates them and adds them to the group
 
-	for (i = 10; i < 10; i++) {
+	for (i = 10; i < 20; i++) {
 
-		alien = new Sprite(500, 300, 50, 50);
+		let alien = new Sprite(windowWidth/2, windowHeight/4, 50, 50);
 
 		alien.vel.x = 3;
 
@@ -51,23 +51,25 @@ function setup() {
 
 		alienGroup.add(alien);
 
-		alienGroup.collides(blecktangle, func2Call);
+		alienGroup.collides(blecktangle, deleteBall);
 
-	}
 
-	function func2Call(_ssss, _blecktangle) {
-
-		// Delete the alien which was hit
-
-		_ssss.remove();
 	}
 }
-	/*******************************************************/
-	// draw()
-	/*******************************************************/
-	function draw() {
-background("black")
-	}
+/*******************************************************/
+// draw()
+/*******************************************************/
+function draw() {
+	background("red");
+
+	function deleteBall(_blecktangle,_ssss ) {
+
+// Delete the alien which was hit
+
+_ssss.remove();
+
+}
+}
 
 /*******************************************************/
 //  END OF APP
