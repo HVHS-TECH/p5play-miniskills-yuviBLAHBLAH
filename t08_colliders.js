@@ -7,13 +7,16 @@
 /*******************************************************/
 // setup()
 /*******************************************************/
-function deleteBall() {
+function deleteBall(_alien, _blecktangle) {
+
+	// Delete the alien which was hit
 	console.log("colliding: ");
+	_alien.remove();
 
 }
 function setup() {
 
-		//create a new group for the aliens and define the properties of the aliens
+	//create a new group for the aliens and define the properties of the aliens
 
 	alienGroup = new Group();
 	console.log("setup: ");
@@ -39,7 +42,7 @@ function setup() {
 
 	for (i = 10; i < 20; i++) {
 
-		let alien = new Sprite(windowWidth/2, windowHeight/4, 50, 50);
+		let alien = new Sprite(windowWidth / 2, windowHeight / 4, 100, 100);
 
 		alien.vel.x = 3;
 
@@ -62,13 +65,7 @@ function setup() {
 function draw() {
 	background("red");
 
-	function deleteBall(_blecktangle,_ssss ) {
 
-// Delete the alien which was hit
-
-_ssss.remove();
-
-}
 }
 
 /*******************************************************/
