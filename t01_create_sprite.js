@@ -9,20 +9,24 @@
 /*******************************************************/
 function setup() {
 	console.log("setup: ");
-	cnv = new Canvas(1000, 1000);
-	rectangle = new Sprite(200, 200, 33, 33, 'd');
-	rectangle.color = 'pink';
+	cnv = new Canvas(windowWidth, windowHeight);
 
-	circle = new Sprite(400, 400, 500, 'd');
+	//make blocks idk i js got here
+	for (var i = 0; i < 25; i++) {
+		blockColor = color(random(255), random(255), random(255))
+		for (var collumn = 0; collumn < 25; collumn++ ) {
+			var block = new Sprite(collumn*80+ 40, i * 80,50, 50);
+			block.color = spriteColor;
+		}
+	}
 
-	circle.color = 'green';
 }
 
 /*******************************************************/
 // draw()
 /*******************************************************/
 function draw() {
-		background("white");
+	background("pink");
 }
 
 /*******************************************************/
